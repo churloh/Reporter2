@@ -1,0 +1,33 @@
+﻿<div class="panel panel-default" ng-controller="sts.views.sitrep.list as vm">
+
+    <div class="panel-heading" style="position: relative;">
+        <div class="row">
+            
+            <!-- Title -->
+            <h3 class="panel-title col-xs-6">
+                @L("SitRepList") - <span>{{vm.getSitRepCountText()}}</span>
+            </h3>
+            
+            <!-- Task state combobox -->
+            <div class="col-xs-6 text-right">
+                <select ng-model="selectedState">
+                    <option value="0">@L("AllSitReps")</option>
+                    <option value="1">@L("AllSitReps")</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sit-Rep list -->
+    <ul class="list-group" ng-repeat="sitrep in vm.sitreps">
+        <div class="list-group-item">
+            <span ng-class="sitrep-description">{{sitrep.description}}</span>
+            <br />
+            <span ng-show="sitrep.reporterId">
+                <span class="sitrep-reportedby">{{task.reporterName}}</span>
+            </span>
+            <span class="sitrep-creationtime">{{task.creationTime | momentFromNow}}</span>
+        </div>
+    </ul>
+
+</div>

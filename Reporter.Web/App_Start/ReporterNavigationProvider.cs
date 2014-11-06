@@ -23,6 +23,13 @@ namespace Reporter.Web
                         )
                 ).AddItem(
                     new MenuItemDefinition(
+                        "SitRepList",
+                        new LocalizableString("SitRepList", ReporterConsts.LocalizationSourceName),
+                        url: "#/sitreps",
+                        icon: "fa fa-tasks"
+                        )
+                ).AddItem(
+                    new MenuItemDefinition(
                         "About",
                         new LocalizableString("About", ReporterConsts.LocalizationSourceName),
                         url: "#/about",

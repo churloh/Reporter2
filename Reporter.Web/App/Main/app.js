@@ -23,6 +23,17 @@
                     templateUrl: '/App/Main/views/home/home.cshtml',
                     menu: 'Home' //Matches to name of 'Home' menu in ReporterNavigationProvider
                 })
+                .state('sitreplist', {
+                    url: '/sitreps',
+                    templateUrl: '/App/Main/views/sitrep/list.cshtml',
+                    menu: 'SitRepList' //Matches to name of 'SitRepList' menu in ReporterNavigationProvider
+                })
+                /*
+                .state('newtask', {
+                    url: '/new',
+                    templateUrl: '/App/Main/views/sitrep/new.cshtml',
+                    menu: 'NewTask' //Matches to name of 'NewTask' menu in SimpleTaskSystemNavigationProvider
+                })*/
                 .state('about', {
                     url: '/about',
                     templateUrl: '/App/Main/views/about/about.cshtml',

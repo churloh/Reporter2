@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="EntityFramework\ReporterDbContext.cs" />
     <Compile Include="EntityFramework\Repositories\ReporterRepositoryBase.cs" />
+    <Compile Include="EntityFramework\Repositories\SitRepRepositiry.cs" />
     <Compile Include="Migrations\201411060059220_InitialCreate.cs" />
     <Compile Include="Migrations\201411060059220_InitialCreate.Designer.cs">
       <DependentUpon>201411060059220_InitialCreate.cs</DependentUpon>
