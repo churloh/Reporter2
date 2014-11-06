@@ -4,6 +4,7 @@ namespace Reporter.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using Reporter.Users;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Reporter.EntityFramework.ReporterDbContext>
     {
@@ -15,8 +16,7 @@ namespace Reporter.Migrations
 
         protected override void Seed(Reporter.EntityFramework.ReporterDbContext context)
         {
-            // This method will be called every time after migrating to the latest version.
-            // You can add any seed data here...
+            context.Users.AddOrUpdate(p => p.Name, new User { Name = "Admin" });
         }
     }
 }
