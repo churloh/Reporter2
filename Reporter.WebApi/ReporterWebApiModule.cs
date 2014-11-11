@@ -20,7 +20,7 @@ namespace Reporter
             //Creating dynamic Web Api Controllers for application services.
             //Thus, 'web api layer' is created automatically by ABP.
             DynamicApiControllerBuilder
-                .ForAll<IApplicationService>(typeof(ReporterApplicationModule).Assembly, "app")
+                .ForAll<IApplicationService>(typeof(ReporterApplicationModule).Assembly, "reporter")
                 .Build();
         }
     }

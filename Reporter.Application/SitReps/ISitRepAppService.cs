@@ -4,7 +4,7 @@ using Reporter.SitReps.Dtos;
 namespace Reporter.SitReps
 {
     /// <summary>
-    /// Defines an application service for <see cref="Task"/> operations.
+    /// Defines an application service for <see cref="SitRep"/> operations.
     /// 
     /// It extends <see cref="IApplicationService"/>.
     /// Thus, ABP enables automatic dependency injection, validation and other benefits for it.
@@ -14,7 +14,7 @@ namespace Reporter.SitReps
     /// </summary>
     public interface ISitRepAppService : IApplicationService
     {
-        GetTasksOutput GetSitReps(GetSitRepsInput input);
+        GetSitRepsOutput GetSitReps(GetSitRepsInput input);
 
         void UpdateSitRep(UpdateSitRepInput input);
 

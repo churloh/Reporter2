@@ -3,7 +3,7 @@
 
     var controllerId = 'sts.views.sitrep.list';
     app.controller(controllerId, [
-        '$scope', 'abp.services.app.sitRep',
+        '$scope', 'abp.services.reporter.sitRep',
         function($scope, sitrepService) {
             var vm = this;
 
@@ -14,11 +14,11 @@
             $scope.selectedState = 0;
 
             $scope.$watch('selectedState', function (value) {
-                vm.refreshTasks();
+                vm.refreshSitReps();
             });
 
-            vm.refreshTasks = function () {
-                abp.ui.setBusy( //Set whole page busy until getTasks complete
+            vm.refreshSitReps = function () {
+                abp.ui.setBusy( //Set whole page busy until getSitReps complete
                     null,
                     sitrepService.getSitReps({ //Call application service method directly from javascript
                         state: $scope.selectedState > 0 ? $scope.selectedState : null
@@ -36,7 +36,7 @@
                     newState = 1; //Active
                 }
 
-                sirepService.updateTask({
+                sitrepService.updateSitRep({
                     sitrepId: sitrep.id
                 }).success(function () {
                     abp.notify.info(vm.localize('SitRepUpdatedMessage'));

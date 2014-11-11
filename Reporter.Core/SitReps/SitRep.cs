@@ -21,7 +21,7 @@ namespace Reporter.SitReps
     public class SitRep : Entity, IHasCreationTime
     {
         /// <summary>
-        /// A reference (navigation property) to assigned <see cref="User"/> for this task.
+        /// A reference (navigation property) to assigned <see cref="User"/> for this sit-rep.
         /// We declare <see cref="ForeignKeyAttribute"/> for EntityFramework here.
         /// </summary>
         [ForeignKey("ReporterId")]
@@ -33,12 +33,12 @@ namespace Reporter.SitReps
         public virtual int? ReporterId { get; set; }
 
         /// <summary>
-        /// Describes the task.
+        /// Describes the sit-rep.
         /// </summary>
         public virtual string Description { get; set; }
 
         /// <summary>
-        /// The time when this task is created.
+        /// The time when this sit-rep is created.
         /// </summary>
         public virtual DateTime CreationTime { get; set; }
 

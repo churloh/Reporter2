@@ -1,7 +1,7 @@
 ﻿(function() {
     var app = angular.module('app');
 
-    var controllerId = 'sts.views.task.new';
+    var controllerId = 'sts.views.sitrep.new';
     app.controller(controllerId, [
         '$scope', '$location', 'abp.services.tasksystem.task', 'abp.services.tasksystem.person',
         function($scope, $location, taskService, personService) {
@@ -12,7 +12,7 @@
                 assignedPersonId: null
             };
 
-            var localize = abp.localization.getSource('SimpleTaskSystem');
+            var localize = abp.localization.getSource('Reporter');
 
             vm.people = []; //TODO: Move Person combo to a directive?
 

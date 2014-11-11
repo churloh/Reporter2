@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DtoMappings.cs" />
     <Compile Include="ReporterApplicationModule.cs" />
     <Compile Include="ReporterAppServiceBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,6 +81,10 @@
     <Compile Include="SitReps\Dtos\UpdateSitRepInput.cs" />
     <Compile Include="SitReps\ISitRepAppService.cs" />
     <Compile Include="SitReps\SitRepAppService.cs" />
+    <Compile Include="Users\Dtos\GetAllUsersOutput.cs" />
+    <Compile Include="Users\Dtos\UserDto.cs" />
+    <Compile Include="Users\IReporterAppService.cs" />
+    <Compile Include="Users\ReporterAppService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -91,9 +96,7 @@
       <Name>Reporter.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Users\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\AutoMapper.3.2.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.2.1\tools\AutoMapper.targets')" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

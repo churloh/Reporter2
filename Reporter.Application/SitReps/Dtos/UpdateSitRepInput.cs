@@ -6,7 +6,7 @@ using Abp.Runtime.Validation;
 namespace Reporter.SitReps.Dtos
 {
     /// <summary>
-    /// This DTO class is used to send needed data to <see cref="ITaskAppService.UpdateSitRep"/> method.
+    /// This DTO class is used to send needed data to <see cref="ISitRepAppService.UpdateSitRep"/> method.
     /// 
     /// Implements <see cref="IInputDto"/>, thus ABP applies standard input process (like automatic validation) for it. 
     /// Implements <see cref="ICustomValidate"/> for additional custom validation.

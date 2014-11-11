@@ -13,7 +13,7 @@ namespace Reporter.SitReps
     /// Inherits from <see cref="ApplicationService"/>.
     /// <see cref="ApplicationService"/> contains some basic functionality common for application services (such as logging and localization).
     /// </summary>
-    public class SitRepAppService : ApplicationService, ISitRepAppService
+    public class SitRepAppService : ReporterAppServiceBase, ISitRepAppService
     {
         //These members set in constructor using constructor injection.
 
@@ -30,13 +30,13 @@ namespace Reporter.SitReps
             this.userRepository = userRepository;
         }
 
-        public GetTasksOutput GetSitReps(GetSitRepsInput input)
+        public GetSitRepsOutput GetSitReps(GetSitRepsInput input)
         {
             // Called specific GetAllWithReporters method of sit-rep repository.
             var sitReps = sitRepRepository.GetAllWithReporters(input.ReporterId);
 
             // Used AutoMapper to automatically convert List<SitRep> to List<SitRepDto>.
-            return new GetTasksOutput
+            return new GetSitRepsOutput
             {
                 SitReps = Mapper.Map<List<SitRepDto>>(sitReps)
             };
@@ -65,7 +65,7 @@ namespace Reporter.SitReps
             //We can use Logger, it's defined in ApplicationService class.
             Logger.Info("Creating a sit-rep for input: " + input);
 
-            //Creating a new Task entity with given input's properties
+            //Creating a new sit-rep entity with given input's properties
             var sitRep = new SitRep { Description = input.Description };
 
             if (input.ReporterId.HasValue)

@@ -3,7 +3,7 @@ using Abp.Application.Services.Dto;
 
 namespace Reporter.SitReps.Dtos
 {
-    public class GetTasksOutput : IOutputDto
+    public class GetSitRepsOutput : IOutputDto
     {
         public List<SitRepDto> SitReps { get; set; }
     }
