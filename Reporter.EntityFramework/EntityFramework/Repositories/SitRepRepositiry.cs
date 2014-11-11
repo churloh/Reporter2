@@ -8,7 +8,7 @@ namespace Reporter.EntityFramework.Repositories
     /// <summary>
     /// Implements <see cref="ITaskRepository"/> for EntityFramework ORM.
     /// </summary>
-    public class TaskRepository : ReporterRepositoryBase<SitRep, int>, ISitRepRepository
+    public class SitRepRepository : ReporterRepositoryBase<SitRep, int>, ISitRepRepository
     {
         public List<SitRep> GetAllWithReporters(int? reporterId)
         {
@@ -22,11 +22,11 @@ namespace Reporter.EntityFramework.Repositories
 
             if (reporterId.HasValue)
             {
-                query = query.Where(task => task.Reporter.Id == reporterId.Value);
+                query = query.Where(sr => sr.Reporter.Id == reporterId.Value);
             }
             return query
-                .OrderByDescending(task => task.CreationTime)
-                .Include(task => task.Reporter) //Include reporter in a single query
+                .OrderByDescending(sr => sr.CreationTime)
+                .Include(sr => sr.Reporter) //Include reporter in a single query
                 .ToList();
         }
     }
