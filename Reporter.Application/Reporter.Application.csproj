@@ -84,7 +84,7 @@
     <Compile Include="Users\Dtos\GetAllUsersOutput.cs" />
     <Compile Include="Users\Dtos\UserDto.cs" />
     <Compile Include="Users\IUserAppService.cs" />
-    <Compile Include="Users\UserAppService.cs" />
+    <None Include="Users\UserAppService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

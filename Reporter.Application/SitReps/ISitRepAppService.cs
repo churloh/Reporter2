@@ -14,6 +14,8 @@ namespace Reporter.SitReps
     /// </summary>
     public interface ISitRepAppService : IApplicationService
     {
+        GetSitRepsOutput GetAllSitReps();
+
         GetSitRepsOutput GetSitReps(GetSitRepsInput input);
 
         void UpdateSitRep(UpdateSitRepInput input);

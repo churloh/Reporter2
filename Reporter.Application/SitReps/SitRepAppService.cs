@@ -30,6 +30,18 @@ namespace Reporter.SitReps
             this.userRepository = userRepository;
         }
 
+        public GetSitRepsOutput GetAllSitReps()
+        {
+            // Called specific GetAllWithReporters method of sit-rep repository.
+            var sitReps = sitRepRepository.GetAllWithReporters(null);
+
+            // Used AutoMapper to automatically convert List<SitRep> to List<SitRepDto>.
+            return new GetSitRepsOutput
+            {
+                SitReps = Mapper.Map<List<SitRepDto>>(sitReps)
+            };
+        }
+
         public GetSitRepsOutput GetSitReps(GetSitRepsInput input)
         {
             // Called specific GetAllWithReporters method of sit-rep repository.
